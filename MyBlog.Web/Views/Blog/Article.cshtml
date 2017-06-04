@@ -1,0 +1,21 @@
+﻿@model MyBlog.Web.Models.MyBlogArticleModel
+@{
+    ViewBag.Title = "Article";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hr/>
+@(ViewBag.Page != null ? Html.ActionLink("Back", "Index", "Blog", new { @page = ViewBag.Page }, null) : Html.ActionLink("Back", "Index", "Blog"))
+ 
+
+@if (Model != null)
+{
+    <h2>@Model.Title</h2>
+
+    <p>
+        <em>@Model.DateCreated</em>
+    </p>
+    <p>
+        @Model.BodyContent
+    </p>
+
+}
